@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เข้าสู่ระบบร้านอาหาร</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #ffebcd, #ffe4b5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+    }
+    header {
+      background-color: #d84315;
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      font-family: 'Cursive', sans-serif;
+    }
+    main {
+      padding: 30px;
+      background-color: #fffaf0;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 320px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 12px;
+      border: 1px solid #f0c987;
+      font-size: 16px;
+      background-color: #fff8e1;
+    }
+    button {
+      padding: 12px 20px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff7043;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #d84315;
+    }
+    .error {
+      color: #d32f2f;
+      font-size: 14px;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>ร้านอาหาร Sansai</header>
+<main>
+  <input type="text" id="username" placeholder="ชื่อผู้ใช้">
+  <input type="password" id="password" placeholder="รหัสผ่าน">
+  <button onclick="handleLogin()">เข้าสู่ระบบ</button>
+  <div class="error" id="errorMsg">ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง</div>
+</main>
+<script>
+  function handleLogin() {
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+    const error = document.getElementById('errorMsg');
+
+    // ตัวอย่างตรวจสอบ user/pass แบบ static
+    if(user === 'admin' && pass === '1234') {
+      alert('เข้าสู่ระบบสำเร็จ!');
+      error.style.display = 'none';
+    } else {
+      error.style.display = 'block';
+    }
+  }
+</script>
+</body>
+</html>
